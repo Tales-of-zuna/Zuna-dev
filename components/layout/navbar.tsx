@@ -119,7 +119,7 @@ const Navbar = () => {
         <Link href={"/"}>
           <Logo />
         </Link>
-        <div className="hidden sm:flex gap-4 items-center">
+        <div className="hidden sm:flex font-semibold gap-4 items-center">
           {links.map((link) => (
             <Link
               className={`hover:text-gray-200 transition-all transform duration-300 ease-in-out ${

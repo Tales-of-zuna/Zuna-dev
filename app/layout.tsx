@@ -1,25 +1,10 @@
 import Navbar from "@/components/layout/navbar";
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Roboto_Flex } from "next/font/google";
 import "./globals.css";
 
-const roboto = Roboto({
+const roboto = Roboto_Flex({
   subsets: ["cyrillic"],
-  weight: [
-    "100",
-    "300",
-    "400",
-    "500",
-    "700",
-    "900",
-    "100",
-    "300",
-    "400",
-    "500",
-    "700",
-    "900",
-  ],
-  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {

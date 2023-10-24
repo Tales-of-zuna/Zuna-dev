@@ -5,9 +5,9 @@ import slugify from "slugify";
 
 ConnectMongoDB();
 
-export const GET = async () => {
+export const GET = async (req: NextRequest) => {
   try {
-    const blogs = await Blog.findOne({ status: false }).populate("author");
+    const blogs = await Blog.find().populate("author");
     return Response.json(blogs);
   } catch (error) {
     console.log(error);
@@ -16,7 +16,6 @@ export const GET = async () => {
 
 export const POST = async (request: NextRequest) => {
   const body = await request.json();
-  console.log("🚀 ~ file: route.js:18 ~ POST ~ body:", body);
   body.slug = slugify(body.title);
   try {
     const blog = await Blog.create(body);

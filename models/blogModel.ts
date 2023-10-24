@@ -3,16 +3,16 @@ import mongoose from "mongoose";
 const blogSchema = new mongoose.Schema(
   {
     title: { type: String, required: true, unique: true },
-    status: { type: Boolean, required: true, unique: true, default: false },
+    status: { type: Boolean, required: true, default: false },
     metadata: { type: String, required: true },
-    slug: { type: String, required: true, unique: true, lowercase: true },
+    slug: { type: String, required: true, lowercase: true, unique: true },
     summary: { type: String, required: true },
     author: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: true,
     },
-
+    content: { type: String, required: true },
     image: { type: String, required: true },
     tags: [{ type: String }],
     categories: [
@@ -22,6 +22,7 @@ const blogSchema = new mongoose.Schema(
         required: true,
       },
     ],
+
     comments: [
       { type: mongoose.Schema.Types.ObjectId, ref: "Comment", required: true },
     ],

@@ -12,6 +12,7 @@ export const GET = async () => {
     console.log(error);
   }
 };
+
 export const POST = async (request: NextRequest) => {
   const body = await request.json();
   try {

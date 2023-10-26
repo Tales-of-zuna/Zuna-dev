@@ -10,6 +10,7 @@ const Home = () => {
     const res = await fetch("/api/users");
   };
   useEffect(() => {
+    getUsers();
     setMounted(true);
   }, []);
   const socials = [

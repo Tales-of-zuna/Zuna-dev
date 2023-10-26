@@ -6,6 +6,9 @@ import { useEffect, useState } from "react";
 
 const Home = () => {
   const [mounted, setMounted] = useState(false);
+  const getUsers = async () => {
+    const res = await fetch("/api/users");
+  };
   useEffect(() => {
     setMounted(true);
   }, []);

@@ -2,9 +2,9 @@
 import Background from "@/components/layout/background";
 import { Image } from "@nextui-org/react";
 import dayjs from "dayjs";
-import { useEffect, useState } from "react";
+import { Key, useEffect, useState } from "react";
 
-const BLogs = () => {
+const Podcasts = () => {
   type Blog = {
     _id: string;
     title: string;
@@ -28,7 +28,7 @@ const BLogs = () => {
     <div
       className={`transition-all pt-24 transform duration-1000 ${
         mounted
-          ? " opacity-100 bg-gradient-to-tl to-yellow-950 from-black flex min-h-screen p-4 justify-center"
+          ? " opacity-100 bg-gradient-to-tl to-green-950 from-black flex min-h-screen p-4 justify-center"
           : "opacity-50 "
       }`}
     >
@@ -37,9 +37,9 @@ const BLogs = () => {
       </div>
       <div className="text-gray-400 w-full md:w-2/3 space-y-8">
         <div>
-          <p className="text-3xl font-bold">Blogs</p>
+          <p className="text-3xl font-bold">Podcasts</p>
           <p className="text-sm">
-            From Bits to Pixels: My Tech & Life Adventures
+            From Code to Conversation: Tech Podcasts changed My life
           </p>
         </div>
         {/* start of filters */}
@@ -162,7 +162,7 @@ const BLogs = () => {
             mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
           } grid grid-cols-1 md:grid-cols-4 transition-all transform duration-300 ease-in-out delay-1000 gap-4`}
         >
-          {blogs.map((blog: Blog, idx) => {
+          {blogs.map((blog: Blog, idx: Key | null | undefined) => {
             return (
               <div
                 key={idx}
@@ -205,4 +205,4 @@ const BLogs = () => {
   );
 };
 
-export default BLogs;
+export default Podcasts;

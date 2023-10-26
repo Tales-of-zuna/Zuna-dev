@@ -32,7 +32,7 @@ const Home = () => {
     <div
       className={`transition-all pt-20 md:pt-4 transform duration-1000 ${
         mounted
-          ? " opacity-100 bg-gradient-to-tl to-lime-950 from-black flex min-h-screen p-4 justify-center md:items-center "
+          ? " opacity-100 bg-gradient-to-tl to-emerald-950 from-black flex min-h-screen p-4 justify-center md:items-center "
           : "opacity-50 "
       }`}
     >

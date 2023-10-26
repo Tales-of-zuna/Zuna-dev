@@ -1,3 +1,4 @@
+import bcrypt from "bcrypt";
 import mongoose from "mongoose";
 const userSchema = new mongoose.Schema(
   {
@@ -27,13 +28,14 @@ const userSchema = new mongoose.Schema(
   }
 );
 
-// userSchema.pre("save", async function (next) {
-//   if (!this.isModified("password")) {
-//     next();
-//   }
-//   const salt = bcrypt.genSaltSync(10);
-//   this.password = await bcrypt.hash(this.password, salt);
-// });
+userSchema.pre("save", async function (next) {
+  if (!this.isModified("password")) {
+    next();
+  }
+  const salt = bcrypt.genSaltSync(10);
+  this.password = await bcrypt.hash(this.password, salt);
+  next();
+});
 
 const User = mongoose.models.User || mongoose.model("User", userSchema);
 

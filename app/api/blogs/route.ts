@@ -6,6 +6,9 @@ import slugify from "slugify";
 ConnectMongoDB();
 
 export const GET = async (req: NextRequest) => {
+  const searchParams = req.nextUrl.searchParams;
+  const query = searchParams.get("name");
+
   try {
     const blogs = await Blog.find().populate("author");
     return Response.json(blogs);

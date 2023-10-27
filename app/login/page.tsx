@@ -2,10 +2,8 @@
 import LoginLogo from "@/components/layout/loginLogo";
 import LoginMonster from "@/components/layout/login_monster";
 import { Image, Input } from "@nextui-org/react";
-import { useState } from "react";
 
 const Login = () => {
-  const [tab, setTab] = useState("login");
   return (
     <div className="h-screen text-stone-800 bg-emerald-300 p-8 w-full flex justify-end items-center">
       <div
@@ -30,12 +28,12 @@ const Login = () => {
             </div>
           </div>
           <div>
-            <p className="font-bold text-4xl text-center">
+            <div className="font-bold text-4xl text-center">
               Welcome back buddy!
-            </p>
-            <p className="text-center opacity-60 animate-pulse">
+            </div>
+            <div className="text-center opacity-60 animate-pulse">
               Please enter your details
-            </p>
+            </div>
           </div>
           <div className="space-y-4">
             <Input isClearable size="sm" label="Email" />

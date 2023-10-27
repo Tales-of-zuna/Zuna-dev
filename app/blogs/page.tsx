@@ -188,7 +188,9 @@ const BLogs = () => {
                     <p className="line-clamp-2 text-sm">{blog.summary}</p>
                   </div>
                   <div className="flex items-center justify-between">
-                    <p className="">{dayjs(Date.now()).format("YYYY.MM.DD")}</p>
+                    <p className="">
+                      {dayjs(blog.createdAt).format("YYYY.MM.DD")}
+                    </p>
                     <Image
                       alt=""
                       className="rounded-full h-7 w-7"

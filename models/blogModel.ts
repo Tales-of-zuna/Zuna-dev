@@ -1,4 +1,7 @@
 import mongoose from "mongoose";
+import Category from "./categoryModel";
+import Comment from "./commentModel";
+import User from "./userModel";
 
 const blogSchema = new mongoose.Schema(
   {
@@ -9,7 +12,7 @@ const blogSchema = new mongoose.Schema(
     summary: { type: String, required: true },
     author: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
+      ref: User,
       required: true,
     },
     content: { type: String, required: true },
@@ -19,13 +22,13 @@ const blogSchema = new mongoose.Schema(
     categories: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Category",
+        ref: Category,
         required: true,
       },
     ],
 
     comments: [
-      { type: mongoose.Schema.Types.ObjectId, ref: "Comment", required: true },
+      { type: mongoose.Schema.Types.ObjectId, ref: Comment, required: true },
     ],
   },
   {

@@ -1,7 +1,9 @@
 const LoginLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <div>{children}</div>
+      </body>
     </html>
   );
 };

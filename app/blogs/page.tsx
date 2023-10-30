@@ -168,11 +168,6 @@ const BLogs = () => {
                 key={idx}
                 className="col-span-1  hover:-translate-y-2 hover:outline outline-1 outline-slate-500 active:scale-95 transition-all transform duration-300 ease-in-out rounded-lg bg-slate-700 bg-opacity-30 backdrop-blur-sm"
               >
-                {/* <Image
-                  alt=""
-                  className="rounded-t-lg rounded-b-none"
-                  src={blog.image}
-                /> */}
                 <video
                   src={blog.video}
                   className="rounded-t-lg"

@@ -3,7 +3,7 @@ import LoginLogo from "@/components/layout/loginLogo";
 import LoginMonster from "@/components/layout/login_monster";
 import { Image, Input } from "@nextui-org/react";
 
-const Login = () => {
+const Logina = () => {
   return (
     <div className="h-screen text-stone-800 bg-emerald-300 p-8 w-full flex justify-end items-center">
       <div
@@ -53,4 +53,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Logina;

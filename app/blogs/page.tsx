@@ -4,7 +4,7 @@ import { Image } from "@nextui-org/react";
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";
 
-const BLogs = () => {
+const Blogs = () => {
   type Blog = {
     _id: string;
     title: string;
@@ -198,9 +198,10 @@ const BLogs = () => {
             );
           })}
         </div>
+        {/* <RichEditor /> */}
       </div>
     </div>
   );
 };
 
-export default BLogs;
+export default Blogs;

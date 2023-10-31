@@ -2,6 +2,7 @@
 import Background from "@/components/layout/background";
 import { Image } from "@nextui-org/react";
 import dayjs from "dayjs";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const Blogs = () => {
@@ -13,7 +14,9 @@ const Blogs = () => {
     createdAt: Date;
     summary: string;
     video: string;
+    slug: string;
   };
+  const router = useRouter();
   const [mounted, setMounted] = useState(false);
   const [blogs, setBlogs] = useState([]);
   const getBlogs = async () => {
@@ -32,7 +35,6 @@ const Blogs = () => {
           : "opacity-50 "
       }`}
     >
-      <div></div>
       <div className="hidden md:flex gap-12 overflow-hidden fixed z-0 h-full top-0 opacity-10 left-0 w-full items-center">
         <Background />
       </div>
@@ -166,6 +168,9 @@ const Blogs = () => {
           {blogs.map((blog: Blog, idx) => {
             return (
               <div
+                onClick={() => {
+                  router.push(`/blogs/${blog.slug}`);
+                }}
                 key={idx}
                 className="col-span-1  hover:-translate-y-2 hover:outline outline-1 outline-slate-500 active:scale-95 transition-all transform duration-300 ease-in-out rounded-lg bg-slate-700 bg-opacity-30 backdrop-blur-sm"
               >
@@ -198,7 +203,6 @@ const Blogs = () => {
             );
           })}
         </div>
-        {/* <RichEditor /> */}
       </div>
     </div>
   );

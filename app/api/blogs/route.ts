@@ -7,13 +7,25 @@ ConnectMongoDB();
 
 export const GET = async (req: NextRequest) => {
   const searchParams = req.nextUrl.searchParams;
-  const query = searchParams.get("name");
-
-  try {
-    const blogs = await Blog.find().populate("author");
-    return Response.json(blogs);
-  } catch (error) {
-    console.log(error);
+  const query = searchParams.get("slug");
+  if (query != null) {
+    try {
+      const blog = await Blog.findOne({
+        slug: query,
+      });
+      return Response.json(blog);
+    } catch (error) {
+      console.log(error);
+      return Response.json({ message: "Not Found" });
+    }
+  } else {
+    try {
+      const blogs = await Blog.find().populate("author");
+      return Response.json(blogs);
+    } catch (error) {
+      console.log(error);
+      return Response.json({ message: "Not Found" });
+    }
   }
 };
 

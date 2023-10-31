@@ -1,5 +1,9 @@
-const BlogCreate = () => {
-  return <div className="h-screen bg-white"></div>;
+const CreateBlog = () => {
+  return (
+    <div className="">
+      <div></div>
+    </div>
+  );
 };
 
-export default BlogCreate;
+export default CreateBlog;

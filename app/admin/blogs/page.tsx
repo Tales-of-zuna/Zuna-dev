@@ -1,5 +1,5 @@
 "use client";
-import { Image } from "@nextui-org/react";
+import { Image, Input } from "@nextui-org/react";
 import dayjs from "dayjs";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -27,7 +27,44 @@ const AdminBlogs = () => {
     setMounted(true);
   }, []);
   return (
-    <div className="pt-4">
+    <div className="pt-4 space-y-4">
+      <div className="flex items-center justify-between">
+        <Input
+          startContent={
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+              />
+            </svg>
+          }
+          className="w-auto"
+          color="success"
+          variant="bordered"
+        />
+        <button
+          onClick={() => router.push("/admin/blogs/create")}
+          className="rounded-lg hover:scale-105 transition-all transform duration-300 hover:bg-emerald-700 active:scale-95 active:bg-emerald-900 hover:shadow-lg bg-emerald-800 shadow-lg p-2"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <title>pen-plus</title>
+            <path d="M20.7,7C20.4,7.4 20,7.7 20,8C20,8.3 20.3,8.6 20.6,9C21.1,9.5 21.6,9.9 21.5,10.4C21.5,10.9 21,11.4 20.5,11.9L16.4,16L15,14.7L19.2,10.5L18.2,9.5L16.8,10.9L13,7.1L17,3.3C17.4,2.9 18,2.9 18.4,3.3L20.7,5.6C21.1,6 21.1,6.7 20.7,7M3,17.2L12.6,7.6L16.3,11.4L6.8,21H3V17.2M7,2V5H10V7H7V10H5V7H2V5H5V2H7Z" />
+          </svg>
+        </button>
+      </div>
       <div
         className={`${
           mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"

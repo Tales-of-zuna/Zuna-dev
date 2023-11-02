@@ -1,9 +1,10 @@
 "use client";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { ReactNode, useState } from "react";
 
 const AdminLayout = ({ children }: { children: ReactNode }) => {
   const router = useRouter();
+  const pathname = usePathname();
   type link = {
     title: string;
     color: string;
@@ -81,7 +82,7 @@ const AdminLayout = ({ children }: { children: ReactNode }) => {
                 }}
                 key={linkObj.link}
                 className={`${
-                  linkObj.link === activeTab?.link
+                  pathname.includes(linkObj.link)
                     ? "translate-x-2  font-semibold border-r text-gray-200"
                     : "translate-x-0 text-gray-500"
                 }  flex transition-all bg-opacity-50  w-full hover:text-gray-200 duration-300 ease-in-out items-center gap-4 p-2`}
@@ -94,6 +95,7 @@ const AdminLayout = ({ children }: { children: ReactNode }) => {
                 >
                   <path d={linkObj.icon} />
                 </svg>
+
                 {linkObj.title}
               </button>
             );

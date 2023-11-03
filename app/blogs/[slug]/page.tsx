@@ -26,9 +26,9 @@ const BlogDetails = ({ params }: { params: { slug: string } }) => {
     <div
       className={`${
         mounted ? "opacity-100" : "opacity-0"
-      } transition-all flex justify-center pt-24 transform duration-300 ease-in-out min-h-screen bg-stone-950`}
+      } transition-all flex justify-center p-4 pt-24 transform duration-300 ease-in-out min-h-screen bg-stone-950`}
     >
-      <div className="w-1/3 space-y-8 text-gray-400 z-10">
+      <div className="w-full md:w-1/3 space-y-8 text-gray-400 z-10">
         <div className="space-y-4">
           <p className="text-4xl font-bold text-gray-200">{data?.title}</p>
           <p className="text-sm">

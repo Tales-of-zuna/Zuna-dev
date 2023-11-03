@@ -62,7 +62,7 @@ const AdminLayout = ({ children }: { children: ReactNode }) => {
   ];
   const [activeTab, setActiveTab] = useState<link>(links[0]);
   return (
-    <div className="absolute gap-4 bg-black z-10 h-full w-full top-0 left-0 p-4 flex">
+    <div className="absolute gap-4 dark bg-black z-10 h-full w-full top-0 left-0 p-4 flex">
       <div
         className={`h-full w-1/5 shadow-md  bg-white bg-opacity-5 flex flex-col justify-between rounded-lg p-8`}
       >

@@ -15,6 +15,7 @@ const Blogs = () => {
     summary: string;
     video: string;
     slug: string;
+    author: any;
   };
   const router = useRouter();
   const [mounted, setMounted] = useState(false);
@@ -194,8 +195,8 @@ const Blogs = () => {
                     </p>
                     <Image
                       alt=""
-                      className="rounded-full h-7 w-7"
-                      src="https://upload.wikimedia.org/wikipedia/commons/5/50/Lex_Fridman_teaching_at_MIT_in_2018.png"
+                      className="rounded-full object-cover h-7 w-7"
+                      src={blog.author.image}
                     />
                   </div>
                 </div>

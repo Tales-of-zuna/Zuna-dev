@@ -1,12 +1,8 @@
 import mongoose from "mongoose";
 
-const categorySchema = new mongoose.Schema(
-  {
-    name: { type: String, required: true },
-    blogs: [{ type: mongoose.Schema.Types.ObjectId, ref: "Blog" }],
-  },
-  { timestamps: true }
-);
+const categorySchema = new mongoose.Schema({
+  name: { type: String, required: true },
+});
 
 const Category =
   mongoose.models?.Category || mongoose.model("Category", categorySchema);

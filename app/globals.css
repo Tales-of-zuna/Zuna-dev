@@ -18,10 +18,19 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: black;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d6d3d1;
+  /* border: solid 3px #ffff; */
+  border-radius: 7px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #57534e;
 }

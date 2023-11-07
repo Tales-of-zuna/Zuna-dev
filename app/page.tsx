@@ -37,18 +37,6 @@ const Home = () => {
       }`}
     >
       <div className="hidden md:flex justify-between gap-12 overflow-hidden fixed h-full top-0 opacity-10 animate-pulse left-0 w-full items-center">
-        {/* <div className="h-1/2 w-screen">
-          <Image
-            draggable={false}
-            aria-readonly
-            aria-disabled
-            className={`object-cover ease-in-out duration-1000 transition-all transform ${
-              mounted ? "delay-500 animate-pulse opacity-100 " : "opacity-0"
-            }`}
-            alt=""
-            src="https://res.cloudinary.com/dwl0svlrm/image/upload/v1692865826/background_tmp8bb.gif"
-          />
-        </div> */}
         <div className="h-full">
           <Background />
           <Background />

@@ -168,12 +168,12 @@ const Blogs = () => {
         >
           {blogs.map((blog: Blog, idx) => {
             return (
-              <div
+              <button
                 onClick={() => {
                   router.push(`/blogs/${blog.slug}`);
                 }}
                 key={idx}
-                className="col-span-1  hover:-translate-y-2 hover:outline outline-1 outline-slate-500 active:scale-95 transition-all transform duration-300 ease-in-out rounded-lg bg-slate-700 bg-opacity-30 backdrop-blur-sm"
+                className="col-span-1  hover:-translate-y-2 hover:outline  outline-stone-500 active:scale-95 transition-all transform duration-300 ease-in-out rounded-lg bg-slate-700 bg-opacity-30 backdrop-blur-sm"
               >
                 <video
                   src={blog.video}
@@ -200,7 +200,7 @@ const Blogs = () => {
                     />
                   </div>
                 </div>
-              </div>
+              </button>
             );
           })}
         </div>

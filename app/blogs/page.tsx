@@ -1,6 +1,6 @@
 "use client";
 import Background from "@/components/layout/background";
-import { Image } from "@nextui-org/react";
+import { Card, Image, Skeleton } from "@nextui-org/react";
 import dayjs from "dayjs";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -167,41 +167,60 @@ const Blogs = () => {
           } grid grid-cols-1 md:grid-cols-4 transition-all transform duration-300 ease-in-out delay-1000 gap-4`}
         >
           {blogs.map((blog: Blog, idx) => {
-            return (
-              <button
-                onClick={() => {
-                  router.push(`/blogs/${blog.slug}`);
-                }}
-                key={idx}
-                className="col-span-1  hover:-translate-y-2 hover:outline  outline-stone-500 active:scale-95 transition-all transform duration-300 ease-in-out rounded-lg bg-slate-700 bg-opacity-30 backdrop-blur-sm"
-              >
-                <video
-                  src={blog.video}
-                  className="rounded-t-lg"
-                  loop
-                  muted
-                  autoPlay
-                />
-                <div className="p-4 space-y-4">
-                  <div>
-                    <p className="font-bold text-slate-200 truncate">
-                      {blog.title}
-                    </p>
-                    <p className="line-clamp-2 text-sm">{blog.summary}</p>
+            if (blog) {
+              return (
+                <button
+                  onClick={() => {
+                    router.push(`/blogs/${blog.slug}`);
+                  }}
+                  key={idx}
+                  className="col-span-1  hover:-translate-y-2 hover:outline  outline-stone-500 active:scale-95 transition-all transform duration-300 ease-in-out rounded-lg bg-slate-700 bg-opacity-30 backdrop-blur-sm"
+                >
+                  <video
+                    src={blog.video}
+                    className="rounded-t-lg"
+                    loop
+                    muted
+                    autoPlay
+                  />
+                  <div className="p-4 space-y-4">
+                    <div>
+                      <p className="font-bold text-slate-200 truncate">
+                        {blog.title}
+                      </p>
+                      <p className="line-clamp-2 text-sm">{blog.summary}</p>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <p className="">
+                        {dayjs(blog.createdAt).format("YYYY.MM.DD")}
+                      </p>
+                      <Image
+                        alt=""
+                        className="rounded-full object-cover h-7 w-7"
+                        src={blog.author.image}
+                      />
+                    </div>
                   </div>
-                  <div className="flex items-center justify-between">
-                    <p className="">
-                      {dayjs(blog.createdAt).format("YYYY.MM.DD")}
-                    </p>
-                    <Image
-                      alt=""
-                      className="rounded-full object-cover h-7 w-7"
-                      src={blog.author.image}
-                    />
-                  </div>
+                </button>
+              );
+            } else {
+              <Card className="col-span-1 space-y-5 p-4" radius="lg">
+                <Skeleton className="rounded-lg">
+                  <div className="h-24 rounded-lg bg-default-300"></div>
+                </Skeleton>
+                <div className="space-y-3">
+                  <Skeleton className="w-3/5 rounded-lg">
+                    <div className="h-3 w-3/5 rounded-lg bg-default-200"></div>
+                  </Skeleton>
+                  <Skeleton className="w-4/5 rounded-lg">
+                    <div className="h-3 w-4/5 rounded-lg bg-default-200"></div>
+                  </Skeleton>
+                  <Skeleton className="w-2/5 rounded-lg">
+                    <div className="h-3 w-2/5 rounded-lg bg-default-300"></div>
+                  </Skeleton>
                 </div>
-              </button>
-            );
+              </Card>;
+            }
           })}
         </div>
       </div>

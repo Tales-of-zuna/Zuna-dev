@@ -1,5 +1,5 @@
-import ConnectMongoDB from "@/configs/mongodb";
-import Category from "@/models/categoryModel";
+import Category from "@/databases/mongoDB/models/categoryModel";
+import ConnectMongoDB from "@/databases/mongoDB/mongodb";
 import { NextRequest } from "next/server";
 ConnectMongoDB();
 

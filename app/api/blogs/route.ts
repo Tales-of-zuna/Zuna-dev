@@ -1,5 +1,5 @@
-import ConnectMongoDB from "@/configs/mongodb";
-import Blog from "@/models/blogModel";
+import Blog from "@/databases/mongoDB/models/blogModel";
+import ConnectMongoDB from "@/databases/mongoDB/mongodb";
 import { NextRequest } from "next/server";
 import slugify from "slugify";
 

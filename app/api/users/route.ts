@@ -1,5 +1,5 @@
-import ConnectMongoDB from "@/configs/mongodb";
-import User from "@/models/userModel";
+import User from "@/databases/mongoDB/models/userModel";
+import ConnectMongoDB from "@/databases/mongoDB/mongodb";
 import { NextRequest } from "next/server";
 ConnectMongoDB();
 export const GET = async () => {

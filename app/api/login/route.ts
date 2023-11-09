@@ -1,5 +1,5 @@
-import ConnectMongoDB from "@/configs/mongodb";
-import User from "@/models/userModel";
+import User from "@/databases/mongoDB/models/userModel";
+import ConnectMongoDB from "@/databases/mongoDB/mongodb";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { NextRequest } from "next/server";
